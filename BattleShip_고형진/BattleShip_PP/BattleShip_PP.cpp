@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Ship.h"
 
 const std::string strDestroy = "Destroy";
 const std::string strHit = "Hit";
@@ -14,7 +15,7 @@ const std::string strMiss = "Miss";
 
 int _tmain()
 {
-	std::string strinput;
+	/*std::string strinput;
 	std::string strResult[] = { strHit, strMiss, strDestroy };
 	int kind;
 	int destroyedKind;
@@ -50,6 +51,21 @@ int _tmain()
 	fflush(stdin);
 	getchar();
 
+	return 0;*/
+
+
+	Aircraft aircraft;
+
+	Position pos;
+	pos.x = 3;
+	pos.y = 3;
+	aircraft.AddPosition(pos, RIGHT);
+	std::cout << aircraft.HitCheck(pos) << "\n";
+
+	aircraft.Print();
+
+
+	getchar();
 	return 0;
 }
 

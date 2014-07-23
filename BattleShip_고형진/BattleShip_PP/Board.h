@@ -6,7 +6,7 @@ public:
 	~Board();
 private:
 	int width, height;
-	int** board;
+	int** map;
 
 public:
 	void DrawBoard();

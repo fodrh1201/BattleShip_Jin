@@ -1,6 +1,8 @@
 #pragma once
 #include "Board.h"
 #include "Ship.h"
+#define SHIPNUM 5
+
 class Player
 {
 public:
@@ -8,15 +10,15 @@ public:
 	~Player();
 
 public:
-	void submit();
-	void placeship();
+	void Submit();
+	void Placeship();
 	void Attack();
 	void GiveUp();
 
 private:
 	Board myBoard;
 	Board enemyBoard;
-	Ship* shipList;
+	Ship shipList[SHIPNUM];
 	int type;
 
 };
