@@ -11,14 +11,21 @@ public:
 
 public:
 	void Submit();
-	void Placeship();
+	void PlaceShip();
 	void Attack();
 	void GiveUp();
+	void PrintShips();
 
 private:
 	Board myBoard;
 	Board enemyBoard;
-	Ship shipList[SHIPNUM];
+	Aircraft m_aircraft;
+	Battleship m_battleShip;
+	Cruiser m_cruiser;
+	Destroyer m_destroyer1;
+	Destroyer m_destroyer2;
+	Ship * shipList[SHIPNUM];
+
 	int type;
 
 };

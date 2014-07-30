@@ -5,8 +5,9 @@
 
 Ship::Ship()
 {
-	m_Hp = 0;
 	m_Type = SHIPNONE;
+	m_size = 0;
+	m_Hp = 0;
 }
 
 
@@ -14,9 +15,12 @@ Ship::~Ship()
 {
 }
 
+
+
+
 HitResult Ship::HitCheck(Position pos)
 {
-	for (int i = 0; i < size; ++i)
+	for (int i = 0; i < m_size; ++i)
 	{
 		if (pos.x == m_Pos[i].x && pos.y == m_Pos[i].y)
 		{
@@ -36,28 +40,28 @@ void Ship::AddPosition(Position head, Direction dir)
 	switch (dir)
 	{
 	case RIGHT:
-		for (int i = 0; i < size; ++i)
+		for (int i = 0; i < m_size; ++i)
 		{
 			Position p = { head.x + i, head.y };
 			m_Pos[i] = p;
 		}
 		break;
 	case LEFT:
-		for (int i = 0; i < size; ++i)
+		for (int i = 0; i < m_size; ++i)
 		{
 			Position p = { head.x - i, head.y };
 			m_Pos[i] = p;
 		}
 		break;
 	case UP:
-		for (int i = 0; i < size; ++i)
+		for (int i = 0; i < m_size; ++i)
 		{
 			Position p = { head.x, head.y + i };
 			m_Pos[i] = p;
 		}
 		break;
 	case DOWN:
-		for (int i = 0; i < size; ++i)
+		for (int i = 0; i < m_size; ++i)
 		{
 			Position p = { head.x, head.y - i };
 			m_Pos[i] = p;
@@ -66,6 +70,26 @@ void Ship::AddPosition(Position head, Direction dir)
 	default:
 		break;
 	}
+
+
+	std::cout << "x: " << head.x << std::endl;
+	std::cout << "y: " << head.y << std::endl;
+}
+
+void Ship::AddPosition(char x, char y, Direction dir)
+{
+	int x_pos;
+	int y_pos;
+
+	if (x > 'H' || x < 'A')
+		return;
+
+	x_pos = (int)(x - 'A');
+	
+	y_pos = (int)(y - '0');
+
+	Position head = { x_pos, y_pos };
+	AddPosition(head, dir);
 }
 
 int Ship::GetHP()
@@ -73,18 +97,12 @@ int Ship::GetHP()
 	return m_Hp;
 }
 
-Aircraft::Aircraft()
+int Ship::GetSize()
 {
-	size = 5;
-	m_Hp = 5;
+	return m_size;
 }
 
-Aircraft::~Aircraft()
+std::string Ship::GetName()
 {
-
-}
-
-void Aircraft::Print()
-{
-	std::cout << "Aircraft's HP : " << GetHP() << "\n";
+	return m_Name;
 }

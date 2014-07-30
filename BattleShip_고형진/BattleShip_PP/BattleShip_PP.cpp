@@ -8,6 +8,8 @@
 #include <string>
 #include <vector>
 #include "Ship.h"
+#include <time.h>
+#include "Player.h"
 
 const std::string strDestroy = "Destroy";
 const std::string strHit = "Hit";
@@ -36,11 +38,11 @@ int _tmain()
 		std::cout << strResult[kind];
 		if (strResult[kind] == strDestroy)
 		{
-			destroyedKind = rand() % ships.size();
+			destroyedKind = rand() % ships.m_size();
 			std::cout << " - ";
 			destroyedShips.push_back(ships[destroyedKind]);
 			ships.erase(ships.begin() + destroyedKind);
-			for (unsigned int i = 0; i < destroyedShips.size(); i++)
+			for (unsigned int i = 0; i < destroyedShips.m_size(); i++)
 			{
 				std::cout << destroyedShips[i] << " ";
 			}
@@ -53,16 +55,22 @@ int _tmain()
 
 	return 0;*/
 
+	srand((unsigned int)time);
 
-	Aircraft aircraft;
+	Player p1;
 
-	Position pos;
-	pos.x = 3;
-	pos.y = 3;
-	aircraft.AddPosition(pos, RIGHT);
-	std::cout << aircraft.HitCheck(pos) << "\n";
+	p1.PlaceShip();
+	p1.PrintShips();
 
-	aircraft.Print();
+	//Aircraft aircraft;
+
+// 	Position pos;
+// 	pos.x = 3;
+// 	pos.y = 3;
+// 	aircraft.AddPosition(pos, RIGHT);
+// 	std::cout << aircraft.HitCheck(pos) << "\n";
+// 
+// 	aircraft.Print();
 
 
 	getchar();

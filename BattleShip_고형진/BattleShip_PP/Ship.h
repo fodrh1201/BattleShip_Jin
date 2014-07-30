@@ -37,26 +37,18 @@ public:
 public:
 	HitResult HitCheck(Position pos);
 	int GetHP();
+	int GetSize();
+	std::string GetName();
 	void AddPosition(Position head, Direction dir);
+	void AddPosition(char x, char y, Direction dir);
 	void Print();
+	Position m_Pos[5];
 
 protected:
-	Position m_Pos[5];
-	int size;
+	std::string m_Name;
+	int m_size;
 	int m_Hp;
 	/*
 	Direction m_Direction;*/
 	ShipType m_Type;
 };
-
-class Aircraft: public Ship
-{
-public:
-	Aircraft();
-	~Aircraft();
-	void Print();
-
-private:
-
-};
-
