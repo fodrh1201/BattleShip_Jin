@@ -71,7 +71,8 @@ int _tmain()
 // 	std::cout << aircraft.HitCheck(pos) << "\n";
 // 
 // 	aircraft.Print();
-	
+
+
 	getchar();
 	return 0;
 }

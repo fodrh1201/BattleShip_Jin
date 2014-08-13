@@ -1,10 +1,6 @@
 #pragma once
 #include "Board.h"
 #include "Ship.h"
-#include "..\BattleShip\Aircraft.h"
-#include "Battleship.h"
-#include "..\BattleShip\Cruiser.h"
-#include "..\BattleShip\Destroyer.h"
 #define SHIPNUM 5
 
 class Player

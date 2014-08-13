@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Aircraft.h"
-#include <iostream>
 
 
 Aircraft::Aircraft()
