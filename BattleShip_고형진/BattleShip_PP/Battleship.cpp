@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Battleship.h"
+#include <iostream>
 
 
 

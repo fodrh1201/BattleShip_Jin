@@ -1,0 +1,12 @@
+#ifndef TYPEOFSHIP
+#define TYPEOFSHIP
+
+enum TypeOfShip {
+	SHIPNONE,
+	AIRCRAFT,
+	BATTLESHIP,
+	CRUISER,
+	DESTROYER
+};
+
+#endif
